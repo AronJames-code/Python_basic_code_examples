@@ -38,6 +38,22 @@ number_test = read_float(prompt = 'Please enter a number: ')
 print(number_test)
 
 
+def read_int(prompt):
+    while True:
+        try:
+            result = input(prompt)
+            result = int(result)
+            break
+        except KeyboardInterrupt:
+            print('\nThat won\'t work on me')
+        except ValueError:
+            print('\nThat was not a valid integer...')
+    return result
+
+int_test = read_int('Please enter an integer: ')
+print(int_test)
+
+
 #These functions are nice but it would be even better if we could use them in every program that we write from now on.
 #This is what is called a module, also can be known as a library in other languages.
 #To do this we need to make sure that our file that contains the functions that we want is in the same folder as whatever new file we are working on.
